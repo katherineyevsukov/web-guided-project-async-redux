@@ -12,5 +12,5 @@ export const fetchSuccess = (person)=> {
 }
 
 export const fetchFail = (error)=> {
-    return({type: FETCH_SUCCESS, payload:error});
+    return({type: FETCH_FAIL, payload:error});
 }
