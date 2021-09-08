@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-const Person = ({ person, isFetching, error }) => {
+const Person = (props) => {
+  const { person, isFetching, error } = props;
+  
   useEffect(() => {
   });
 
