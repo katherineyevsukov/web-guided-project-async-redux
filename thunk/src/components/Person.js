@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchStart, fetchSuccess } from './../actions';
+import { fetchStart, fetchSuccess, fetchFail } from './../actions';
 
 import axios from 'axios';
 
@@ -31,6 +31,7 @@ const Person = (props) => {
       .catch(err=>{
         //4. If axios call fails, dispatch(fetchFail)
         console.log(err);
+        props.fetchFail(err);
       })
     
     
@@ -55,4 +56,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchStart, fetchSuccess })(Person);
+export default connect(mapStateToProps, { fetchStart, fetchSuccess, fetchFail })(Person);
