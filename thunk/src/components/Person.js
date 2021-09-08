@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { fetchStart } from './../actions';
 
 const Person = (props) => {
   const { person, isFetching, error } = props;
@@ -16,7 +17,8 @@ const Person = (props) => {
   }
 
   const handleClick = ()=> {
-    
+    //1. dispatch(fetchStart);
+    props.fetchStart();
   }
 
   return (
@@ -38,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Person);
+export default connect(mapStateToProps, { fetchStart })(Person);
