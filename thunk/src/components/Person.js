@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchStart } from './../actions';
 
+import axios from 'axios';
+
 const Person = (props) => {
   const { person, isFetching, error } = props;
   
@@ -19,6 +21,10 @@ const Person = (props) => {
   const handleClick = ()=> {
     //1. dispatch(fetchStart);
     props.fetchStart();
+    //2. axios call
+    axios.get("https://randomuser.me/api/")
+    //3. IF axios call is successful, dispatch(fetchSucess)
+    //4. If axios call fails, dispatch(fetchFail)
   }
 
   return (
