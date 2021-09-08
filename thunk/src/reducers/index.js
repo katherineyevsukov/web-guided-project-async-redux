@@ -11,12 +11,12 @@ const initialState = {
       thumbnail: "https://randomuser.me/api/portraits/thumb/men/70.jpg"
     }
   },
-  isFetching: false,
+  isFetching: true,
   error: ''
 };
 
 export const reducer = (state = initialState, action) => {
-  switch (action.type) {
+  switch (action.tyispe) {
     default:
       return state;
   }
