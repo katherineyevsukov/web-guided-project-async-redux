@@ -25,7 +25,8 @@ const Person = (props) => {
     axios.get("https://randomuser.me/api/")
       .then(resp=> {
         //3. If axios call success, dispatch(fetchSuccess)
-        props.fetchSuccess();
+        console.log(resp.data.results[0]);
+        props.fetchSuccess(resp.data.results[0]);
       })
       .catch(err=>{
         //4. If axios call fails, dispatch(fetchFail)
