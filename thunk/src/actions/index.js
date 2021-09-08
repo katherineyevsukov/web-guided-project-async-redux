@@ -4,7 +4,11 @@ export const FETCH_FAIL = "FETCH_FAIL";
 
 
 
-
+export const getPerson = () => {
+    return (dispatch)=> {
+        
+    }
+}
 
 export const fetchStart = ()=> {
     return({type: FETCH_START});
