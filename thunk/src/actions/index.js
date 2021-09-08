@@ -7,14 +7,16 @@ export const FETCH_FAIL = "FETCH_FAIL";
 
 export const getPerson = () => {
     return (dispatch)=> {
-        dispatch({type: FETCH_START});
+        dispatch(fetchStart());
     
         axios.get("https://randomuser.me/api/")
             .then(resp=> {
-                dispatch({type: FETCH_SUCCESS, payload:resp.data.results[0] });
+                dispatch(fetchSuccess(resp.data.results[0]));
+                // dispatch({type: FETCH_SUCCESS, payload:resp.data.results[0] });
             })
             .catch(err=>{
-                dispatch({type: FETCH_FAIL, payload: err});
+                dispatch(fetchFail(err));
+                // dispatch({type: FETCH_FAIL, payload: err});
             });
     }
 }
