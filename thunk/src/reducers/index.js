@@ -26,7 +26,9 @@ export const reducer = (state = initialState, action) => {
       });
     case("FETCH_SUCCESS"):
       return({
-
+        ...state,
+        person: action.payload,
+        error: ''
       });
     case("FETCH_FAIL"):
     default:
