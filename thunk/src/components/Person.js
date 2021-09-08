@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchStart } from './../actions';
+import { fetchStart, fetchSuccess } from './../actions';
 
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ const Person = (props) => {
     axios.get("https://randomuser.me/api/")
       .then(resp=> {
         //3. If axios call success, dispatch(fetchSuccess)
-        console.log(resp.data.results);
+        props.fetchSuccess();
       })
       .catch(err=>{
         //4. If axios call fails, dispatch(fetchFail)
@@ -54,4 +54,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchStart })(Person);
+export default connect(mapStateToProps, { fetchStart, fetchSuccess })(Person);
