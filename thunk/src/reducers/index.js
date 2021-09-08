@@ -12,11 +12,11 @@ const initialState = {
     }
   },
   isFetching: false,
-  error: 'Error text'
+  error: ''
 };
 
 export const reducer = (state = initialState, action) => {
-  switch (action.tyispe) {
+  switch (action.type) {
     default:
       return state;
   }
