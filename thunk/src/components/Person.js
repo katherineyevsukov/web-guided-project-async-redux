@@ -23,6 +23,12 @@ const Person = (props) => {
     props.fetchStart();
     //2. axios call
     axios.get("https://randomuser.me/api/")
+      .then(resp=> {
+        console.log(resp);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
     //3. IF axios call is successful, dispatch(fetchSucess)
     //4. If axios call fails, dispatch(fetchFail)
   }
