@@ -8,7 +8,19 @@ const Person = (props) => {
   const { person, isFetching, error } = props;
   
   useEffect(() => {
-  });
+    //1. dispatch(fetchStart);
+    props.fetchStart();
+    //2. axios call
+    axios.get("https://randomuser.me/api/")
+      .then(resp=> {
+        //3. If axios call success, dispatch(fetchSuccess)
+        props.fetchSuccess(resp.data.results[0]);
+      })
+      .catch(err=>{
+        //4. If axios call fails, dispatch(fetchFail)
+        props.fetchFail(err);
+      });
+  }, []);
 
   if (error) {
     return <h2>We got an error: {error}</h2>;
