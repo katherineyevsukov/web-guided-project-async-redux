@@ -11,10 +11,10 @@ export const getPerson = () => {
     
         axios.get("https://randomuser.me/api/")
             .then(resp=> {
-                props.fetchSuccess(resp.data.results[0]);
+                dispatch({type: FETCH_SUCCESS, payload:resp.data.results[0] });
             })
             .catch(err=>{
-                props.fetchFail(err);
+                dispatch({type: FETCH_FAIL, payload: err});
             });
     }
 }
