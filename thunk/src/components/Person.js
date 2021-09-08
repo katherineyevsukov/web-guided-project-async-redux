@@ -30,9 +30,7 @@ const Person = (props) => {
       .catch(err=>{
         //4. If axios call fails, dispatch(fetchFail)
         props.fetchFail(err);
-      })
-    
-    
+      });
   }
 
   return (

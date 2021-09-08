@@ -3,14 +3,14 @@ import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL} from './../actions';
 const initialState = {
   person: {
     name: {
-      title: "Mr",
-      first: "Silas",
-      last: "Petersen"
+      title: "",
+      first: "",
+      last: ""
     },
     picture: {
-      large: "https://randomuser.me/api/portraits/men/70.jpg",
-      medium: "https://randomuser.me/api/portraits/med/men/70.jpg",
-      thumbnail: "https://randomuser.me/api/portraits/thumb/men/70.jpg"
+      large: "",
+      medium: "",
+      thumbnail: ""
     }
   },
   isFetching: false,
