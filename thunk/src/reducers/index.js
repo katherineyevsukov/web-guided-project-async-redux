@@ -11,8 +11,8 @@ const initialState = {
       thumbnail: "https://randomuser.me/api/portraits/thumb/men/70.jpg"
     }
   },
-  isFetching: true,
-  error: ''
+  isFetching: false,
+  error: 'Error text'
 };
 
 export const reducer = (state = initialState, action) => {
